@@ -1,6 +1,7 @@
 # wordnet-related-senses
 This python script uses NLTK to group word senses according to their relatedness.
 
+
 ## Installation
 
 1. Install the requirements listed in `requirements.txt`.
