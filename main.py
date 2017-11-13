@@ -14,16 +14,17 @@ def derivational_similarity(lemma1, lemma2):
     and lemma1.
 
     :return: The similarity of lemma1 and lemma2, based on the similarity of the best derivationally related form.
+             If there is no such derivationally related form that leads to a valid similarity value, None is returned.
     """
     def get_candidates(related_lemma, lemma):
         return list(itertools.product(derivationally_related_synsets(related_lemma), [lemma.synset()]))
 
     candidates = get_candidates(lemma1, lemma2) + get_candidates(lemma2, lemma1)
     similarities = list(filter(lambda sim: sim is not None, map(lambda c: c[0].wup_similarity(c[1]), candidates)))
-    similarity = max(similarities)
-    print(f'Lemmas: {lemma1}, {lemma2}. Similarity: {similarity}')
-
-    return similarity
+    if similarities:
+        return max(similarities)
+    else:
+        return None
 
 
 def get_lemma_for_word(synset, word):
