@@ -2,18 +2,28 @@ import itertools
 from nltk.corpus import wordnet as wn
 
 
+def derivationally_related_synsets(lemma):
+    return list(map(lambda form: form.synset(), lemma.derivationally_related_forms()))
+
+
 def derivational_similarity(lemma1, lemma2):
     """
     Calculates the similarity of lemma1 and lemma2 based on the similarity of the best derivationally related
     form that is noted in either lemma1 or lemma2. The 'best' form is defined by taking the maximum of similarities
-    between all derivationally related forms of lemma1, and lemma1; and all derivationally related forms of lemma2,
+    between all derivationally related forms of lemma1, and lemma2; and all derivationally related forms of lemma2,
     and lemma1.
 
     :return: The similarity of lemma1 and lemma2, based on the similarity of the best derivationally related form.
     """
-    print(f'Lemmas: {lemma1}, {lemma2}')
+    def get_candidates(related_lemma, lemma):
+        return list(itertools.product(derivationally_related_synsets(related_lemma), [lemma.synset()]))
 
-    return 0.01
+    candidates = get_candidates(lemma1, lemma2) + get_candidates(lemma2, lemma1)
+    similarities = list(filter(lambda sim: sim is not None, map(lambda c: c[0].wup_similarity(c[1]), candidates)))
+    similarity = max(similarities)
+    print(f'Lemmas: {lemma1}, {lemma2}. Similarity: {similarity}')
+
+    return similarity
 
 
 def get_lemma_for_word(synset, word):
