@@ -51,6 +51,11 @@ def main():
         sim = synset1.wup_similarity(synset2)
         if sim is None:
             sim = derivational_similarity(get_lemma_for_word(synset1, word), get_lemma_for_word(synset2, word))
+
+        # If the similarity is still None (both measures failed), we set it to 0.0.
+        if sim is None:
+            sim = 0.0
+
         # print(f'{synset1.definition()} | {synset2.definition()}:\t{sim}')
         return sim
 
