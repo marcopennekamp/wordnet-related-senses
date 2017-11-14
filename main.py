@@ -1,6 +1,7 @@
 import itertools
 import numpy as np
 import sklearn.cluster
+from sys import argv
 from nltk.corpus import wordnet as wn
 
 
@@ -39,7 +40,7 @@ def get_lemma_for_word(synset, word):
 
 
 def main():
-    word = 'cannon'
+    _, word = argv
     synsets = np.asarray(wn.synsets(word))
 
     # First build the distance matrix by computing the similarity of the synsets.
