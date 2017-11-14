@@ -59,11 +59,11 @@ def main():
         # print(f'{synset1.definition()} | {synset2.definition()}:\t{sim}')
         return sim
 
-    similarityMatrix = np.array([[similarity(s1, s2) for s1 in synsets] for s2 in synsets])
+    similarity_matrix = np.array([[similarity(s1, s2) for s1 in synsets] for s2 in synsets])
 
     # Cluster with affinity propagation (doesn't require the number of clusters).
     aff = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.5)
-    aff.fit(similarityMatrix)
+    aff.fit(similarity_matrix)
     print(f'Clusters for \'{word}\':')
     for cluster_id in np.unique(aff.labels_):
         exemplar = synsets[aff.cluster_centers_indices_[cluster_id]]
