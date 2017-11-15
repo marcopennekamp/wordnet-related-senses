@@ -11,17 +11,23 @@ class Ideal:
         self.expected = expected
 
 
-def group(*synsets):
+def group(*synset_names):
+    synsets = map(lambda name: wn.synset(name), synset_names)
     return frozenset(synsets)
 
 
 ideals = [
     Ideal('cannon', {
-        group(wn.synset('cannon.n.03')),
-        group(wn.synset('carom.n.02'), wn.synset('cannon.v.01')),
-        group(wn.synset('cannon.n.02'), wn.synset('cannon.n.04'), wn.synset('cannon.n.01'),
-              wn.synset('cannon.v.02')),
-        group(wn.synset('cannon.n.05'))
+        group('cannon.n.01', 'cannon.n.02', 'cannon.n.04', 'cannon.v.02'),
+        group('carom.n.02', 'cannon.v.01'),
+        group('cannon.n.03'),
+        group('cannon.n.05')
+    }),
+    Ideal('model', {
+        group('model.n.01', 'model.n.04', 'model.n.07', 'model.n.09', 'model.v.01', 'model.v.05', 'model.v.06'),
+        group('model.n.02'),
+        group('mannequin.n.01', 'model.n.03', 'model.v.02', 'model.v.03', 'model.v.04'),
+        group('exemplar.n.01', 'model.n.06', 'exemplary.s.01'),
     })
 ]
 
