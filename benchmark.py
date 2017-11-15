@@ -28,6 +28,12 @@ ideals = [
         group('model.n.02'),
         group('mannequin.n.01', 'model.n.03', 'model.v.02', 'model.v.03', 'model.v.04'),
         group('exemplar.n.01', 'model.n.06', 'exemplary.s.01'),
+    }),
+    Ideal('dog', {
+        group('cad.n.01', 'dog.n.03', 'frump.n.01'),
+        group('pawl.n.01', 'andiron.n.01'),
+        group('dog.n.01', 'chase.v.01'),
+        group('frank.n.02')
     })
 ]
 
