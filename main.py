@@ -1,6 +1,7 @@
 import itertools
 import numpy as np
 import sklearn.cluster
+import metonym
 from sys import argv
 from nltk.corpus import wordnet as wn
 
@@ -39,6 +40,16 @@ def get_lemma_for_word(synset, word):
     return wn.lemma(f'{synset.name()}.{word}')
 
 
+def cluster(similarity_matrix, word, synsets):
+    aff = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.5)
+    aff.fit(similarity_matrix)
+    print(f'Clusters for \'{word}\':')
+    for cluster_id in np.unique(aff.labels_):
+        exemplar = synsets[aff.cluster_centers_indices_[cluster_id]]
+        cluster = np.unique(synsets[np.nonzero(aff.labels_ == cluster_id)])
+        print(f' - {exemplar.name()}: {cluster}')
+
+
 def main():
     _, word = argv
     synsets = np.asarray(wn.synsets(word))
@@ -62,13 +73,12 @@ def main():
     similarity_matrix = np.array([[similarity(s1, s2) for s1 in synsets] for s2 in synsets])
 
     # Cluster with affinity propagation (doesn't require the number of clusters).
-    aff = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.5)
-    aff.fit(similarity_matrix)
-    print(f'Clusters for \'{word}\':')
-    for cluster_id in np.unique(aff.labels_):
-        exemplar = synsets[aff.cluster_centers_indices_[cluster_id]]
-        cluster = np.unique(synsets[np.nonzero(aff.labels_ == cluster_id)])
-        print(f' - {exemplar.name()}: {cluster}')
+    cluster(similarity_matrix, word, synsets)
+
+    # Build the similarity matrix with metonym, then cluster.
+    wordnet_graph = metonym.WordNetGraph('wordnet.adj')
+    similarity_matrix = np.array([[wordnet_graph.path_similarity(s1, s2) for s1 in synsets] for s2 in synsets])
+    cluster(similarity_matrix, word, synsets)
 
 
 # Call the main function defined above to execute the program.
