@@ -58,6 +58,10 @@ def compute_naive_similarity_matrix(word, synsets):
     return np.array([[similarity(s1, s2) for s1 in synsets] for s2 in synsets])
 
 
-def compute_metonym_similarity_matrix(word, synsets):
-    wordnet_graph = metonym.WordNetGraph('wordnet.adj')
-    return np.array([[wordnet_graph.path_similarity(s1, s2) for s1 in synsets] for s2 in synsets])
+def load_wordnet_graph():
+    return metonym.WordNetGraph('wordnet.adj')
+
+
+def compute_lch_similarity_matrix(word, synsets):
+    wordnet_graph = load_wordnet_graph()
+    return np.array([[wordnet_graph.lch_similarity(s1, s2) for s1 in synsets] for s2 in synsets])

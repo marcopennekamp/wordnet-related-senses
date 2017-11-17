@@ -87,7 +87,7 @@ def benchmark_ideal(ideal, verbose):
     word = ideal.word
     synsets = np.asarray(wn.synsets(word))
 
-    similarity_matrix = relatedness.compute_metonym_similarity_matrix(word, synsets)
+    similarity_matrix = relatedness.compute_lch_similarity_matrix(word, synsets)
     clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
     accuracy = measure_clustering_accuracy(ideal, clusters)
 
