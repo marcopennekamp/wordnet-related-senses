@@ -36,6 +36,13 @@ ideals = [
         group('dog.n.01', 'chase.v.01'),
         group('frank.n.02'),
     }),
+    Ideal('arrange', {
+        group('arrange.v.01', 'arrange.v.07'),
+        group('arrange.v.02', 'stage.v.02'),
+        group('arrange.v.06'),
+        group('dress.v.16'),
+        group('format.v.01'),
+    }),
 ]
 
 
