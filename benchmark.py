@@ -21,7 +21,7 @@ ideals = [
         group('cannon.n.01', 'cannon.n.02', 'cannon.n.04', 'cannon.v.02'),
         group('carom.n.02', 'cannon.v.01'),
         group('cannon.n.03'),
-        group('cannon.n.05')
+        group('cannon.n.05'),
     }),
     Ideal('model', {
         group('model.n.01', 'model.n.04', 'model.n.07', 'model.n.09', 'model.v.01', 'model.v.05', 'model.v.06'),
@@ -33,8 +33,12 @@ ideals = [
         group('cad.n.01', 'dog.n.03', 'frump.n.01'),
         group('pawl.n.01', 'andiron.n.01'),
         group('dog.n.01', 'chase.v.01'),
-        group('frank.n.02')
-    })
+        group('frank.n.02'),
+    }),
+    Ideal('deserted', {
+        group('desert.v.03', 'abandoned.s.01'),
+        group('defect.v.01', 'abandon.v.05'),
+    }),
 ]
 
 
