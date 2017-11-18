@@ -1,6 +1,7 @@
 import numpy as np
 from nltk.corpus import wordnet as wn
 
+import corpus
 import relatedness
 import clustering
 
@@ -34,10 +35,6 @@ ideals = [
         group('pawl.n.01', 'andiron.n.01'),
         group('dog.n.01', 'chase.v.01'),
         group('frank.n.02'),
-    }),
-    Ideal('deserted', {
-        group('desert.v.03', 'abandoned.s.01'),
-        group('defect.v.01', 'abandon.v.05'),
     }),
 ]
 
@@ -89,7 +86,7 @@ def benchmark_ideal(ideal, verbose):
     :return: The accuracy of the clustering for the given word.
     """
     word = ideal.word
-    synsets = np.asarray(wn.synsets(word))
+    synsets = np.asarray(corpus.synsets(word))
 
     similarity_matrix = relatedness.compute_lch_similarity_matrix(word, synsets)
     clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
