@@ -52,6 +52,14 @@ ideals = [
         group('scarf_joint.n.01', 'scarf.v.02'),
         group('scarf.v.01'),
     }),
+    Ideal('pale', {
+        group('picket.n.05'),
+        group('pale.s.04', 'pale.v.01'),
+        group('pale.s.02', 'pale.s.03', 'pale.s.01', 'pale.s.05'),
+    }),
+    Ideal('sigh', {
+        group('sigh.n.01', 'sigh.n.02', 'sigh.v.01', 'sigh.v.02'),
+    }),
 ]
 
 
