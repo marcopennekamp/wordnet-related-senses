@@ -43,6 +43,15 @@ ideals = [
         group('dress.v.16'),
         group('format.v.01'),
     }),
+    Ideal('week', {
+        group('week.n.01', 'week.n.03'),
+        group('workweek.n.01'),
+    }),
+    Ideal('scarf', {
+        group('scarf.n.01', 'scarf.v.03'),
+        group('scarf_joint.n.01', 'scarf.v.02'),
+        group('scarf.v.01'),
+    }),
 ]
 
 
