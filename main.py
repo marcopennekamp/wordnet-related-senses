@@ -14,9 +14,13 @@ def main():
         similarity_matrix = relatedness.compute_lch_similarity_matrix(word, synsets)
         clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
 
+        def cluster_to_group_string(cluster):
+            names = list(map(lambda synset: f"'{synset.name()}'", cluster))
+            return f'group({", ".join(names)})'
+
         print(f'Clusters for \'{word}\':')
         for cluster in clusters:
-            print(f' - {next(iter(cluster)).name()}: {cluster}')
+            print(f' - {cluster_to_group_string(cluster)}')
     else:
         print(f'There is no need to cluster the senses of {word}, because it only has one.')
 
