@@ -60,6 +60,17 @@ ideals = [
     Ideal('sigh', {
         group('sigh.n.01', 'sigh.n.02', 'sigh.v.01', 'sigh.v.02'),
     }),
+    Ideal('gift', {
+        group('give.v.08', 'giving.n.01', 'gift.n.01'),
+        group('endow.v.01', 'endowment.n.01'),
+    }),
+    Ideal('plane', {
+        group('plane.n.05', 'plane.n.04', 'plane.v.03', 'plane.v.01'),  # Carpentry.
+        group('flat.s.01', 'plane.n.02'),  # Mathematics.
+        group('plane.n.03'),  # Level of existence.
+        group('plane.v.02'),  # Travel on the surface of water.
+        group('airplane.n.01'),
+    })
 ]
 
 
