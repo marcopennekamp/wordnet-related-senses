@@ -10,9 +10,10 @@ import utils
 def main():
     _, word = argv
     synsets = np.asarray(corpus.synsets(word))
+    wordnet_graph = relatedness.load_wordnet_graph()
 
     if len(synsets) > 1:
-        similarity_matrix = relatedness.compute_lch_similarity_matrix(word, synsets)
+        similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, word, synsets)
         clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
         print(f'Clusters for \'{word}\':')
         utils.print_clusters(clusters)
