@@ -4,6 +4,7 @@ import benchmark_words
 import corpus
 import relatedness
 import clustering
+import utils
 
 
 def measure_clustering_accuracy(ideal, clusters):
@@ -33,17 +34,12 @@ def measure_clustering_accuracy(ideal, clusters):
 def print_benchmark_ideal_results(ideal, clusters, accuracy, verbose):
     word = ideal.word
 
-    def print_cluster(c):
-        print(f' - {next(iter(c)).name()}: {c}')
-
     if verbose:
         print(f'Expected clusters for \'{word}\':')
-        for cluster in ideal.expected:
-            print_cluster(cluster)
+        utils.print_clusters(ideal.expected)
 
         print(f'Clusters for \'{word}\':')
-        for cluster in clusters:
-            print_cluster(cluster)
+        utils.print_clusters(clusters)
 
     print(f'Clustering accuracy for \'{word}\': {accuracy}')
 
