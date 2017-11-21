@@ -74,4 +74,8 @@ ideals = [
         group('intoxicate.v.02', 'souse.v.03'),  # Drinking.
         group('soak.v.09'),  # Heat a metal.
     }),
+    Ideal('superficial', {
+        group('superficial.a.01', 'casual.s.05', 'superficial.s.03'),  # Metaphorical.
+        group('superficial.a.02', 'superficial.s.04'),  # Actual.
+    }),
 ]
