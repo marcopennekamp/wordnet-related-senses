@@ -20,7 +20,7 @@ def main():
     elif len(synsets) == 1:
         print(f'There is no need to cluster the senses of {word}, because it only has one.')
     else:
-        print(f'The word {word}, does not exist.')
+        print(f'The word {word} does not exist.')
 
 
 # Call the main function defined above to execute the program.
