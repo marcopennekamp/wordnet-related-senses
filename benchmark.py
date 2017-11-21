@@ -1,4 +1,5 @@
 import numpy as np
+from munkres import Munkres
 
 import benchmark_words
 import corpus
@@ -7,28 +8,40 @@ import clustering
 import utils
 
 
-def measure_clustering_accuracy(ideal, clusters):
+def calculate_clustering_accuracy(ideal, clusters):
     """
+    Calculates the clustering accuracy for a word given the expected (ideal) clusters. The accuracy
+    is calculated by assigning each ideal cluster to its best-fit real cluster (given the real cluster
+    isn't assigned to another ideal cluster) and then counting the misplaced senses.
 
     :return: A score from 1.0 (perfect match) to 0.0 (nothing fits). However, 0.0 is theoretically not possible,
-             because we don't label the clusters, and thus at least one ideal cluster will find a single element
-             as a counterpart.
+             because we don't label the clusters, and thus at least one ideal cluster will be assigned to some
+             real cluster containing at least one correct sense. A perfect match is only possible if the number
+             of ideal and real clusters is identical.
     """
-    absolute_score = 0.0
-    synset_count = 0
-    for ideal_cluster in ideal.expected:
-        # Implements the Jaccard similarity measure.
-        def measure_cluster_similarity(cluster):
-            return len(cluster & ideal_cluster) / len(cluster | ideal_cluster)
 
-        similarities = list(map(measure_cluster_similarity, clusters))
+    # Convert to lists so we can index them.
+    ideal_list = list(ideal.expected)
+    cluster_list = list(clusters)
 
-        # To give each sense the same weight, instead of each cluster, we multiply the score by the number of synsets
-        # in the ideal cluster. At the end, we also divide by the number of unique synsets in all ideal clusters.
-        current_synset_count = len(ideal_cluster)
-        synset_count += current_synset_count
-        absolute_score += max(similarities) * current_synset_count
-    return absolute_score / synset_count
+    # We want to assign exactly one ideal cluster to one real cluster, so that we can properly count the
+    # senses that were misplaced. Additionally, the number of misplaced senses has to be minimised so that
+    # we can guarantee the best possible assignment for measuring accuracy.
+    # This is a classic assignment problem, which can be solved with the Hungarian algorithm. In this case,
+    # for an ideal cluster, the cost is the number of senses that are missing from a given cluster or that
+    # are misplaced in the given cluster.
+    munkres = Munkres()
+    cost_matrix = [[len((ideal_cluster | cluster) - (ideal_cluster & cluster)) for cluster in cluster_list]
+                   for ideal_cluster in ideal_list]
+    indexes = munkres.compute(cost_matrix)
+
+    all_synset_count = sum(map(lambda cluster: len(cluster), ideal_list))
+    correct_synset_count = 0
+    for ideal_index, cluster_index in indexes:
+        ideal_cluster = ideal_list[ideal_index]
+        cluster = cluster_list[cluster_index]
+        correct_synset_count += len(ideal_cluster & cluster)
+    return correct_synset_count / all_synset_count
 
 
 def print_benchmark_ideal_results(ideal, clusters, accuracy, verbose):
@@ -53,7 +66,7 @@ def benchmark_ideal(wordnet_graph, ideal, verbose):
 
     similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, word, synsets)
     clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
-    accuracy = measure_clustering_accuracy(ideal, clusters)
+    accuracy = calculate_clustering_accuracy(ideal, clusters)
 
     print_benchmark_ideal_results(ideal, clusters, accuracy, verbose)
 
