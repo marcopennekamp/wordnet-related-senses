@@ -91,4 +91,7 @@ ideals = [
         group('rock.n.04'),  # Figurative.
         group('rock.v.01', 'rock.v.02', 'rock.n.07'),  # Tilt, sway.
     }),
+    Ideal('tow', {
+        group('tow.n.01', 'tow.v.01'),
+    }),
 ]
