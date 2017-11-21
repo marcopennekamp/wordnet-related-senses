@@ -65,5 +65,13 @@ ideals = [
         group('plane.n.03'),  # Level of existence.
         group('plane.v.02'),  # Travel on the surface of water.
         group('airplane.n.01'),
-    })
+    }),
+    Ideal('soak', {
+        group('soak.n.01', 'soak.n.02', 'soak.v.01', 'soak.v.08', 'drench.v.04'),  # Soak with a liquid.
+        group('soak.v.05'),  # Beat severely.
+        group('overcharge.v.01'),
+        group('pawn.v.01'),
+        group('intoxicate.v.02', 'souse.v.03'),  # Drinking.
+        group('soak.v.09'),  # Heat a metal.
+    }),
 ]
