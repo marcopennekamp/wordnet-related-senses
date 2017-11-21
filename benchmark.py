@@ -45,7 +45,7 @@ def print_benchmark_ideal_results(ideal, clusters, accuracy, verbose):
         for cluster in clusters:
             print_cluster(cluster)
 
-    print(f'Clustering accuracy for \'{word}\': {measure_clustering_accuracy(ideal, clusters)}')
+    print(f'Clustering accuracy for \'{word}\': {accuracy}')
 
 
 def benchmark_ideal(ideal, verbose):
