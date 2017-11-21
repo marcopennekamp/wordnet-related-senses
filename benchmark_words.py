@@ -78,4 +78,17 @@ ideals = [
         group('superficial.a.01', 'casual.s.05', 'superficial.s.03'),  # Metaphorical.
         group('superficial.a.02', 'superficial.s.04'),  # Actual.
     }),
+    Ideal('store', {
+        group('shop.n.01'),
+        group('memory.n.04'),
+        group('store.v.02', 'storehouse.n.01'),  # Store of goods.
+        group('store.n.02', 'store.v.01'),  # Store for future use.
+    }),
+    Ideal('rock', {
+        group('rock_candy.n.01'),
+        group('rock_\'n\'_roll.n.01'),
+        group('rock.n.01', 'rock.n.02'),  # Stones.
+        group('rock.n.04'),  # Figurative.
+        group('rock.v.01', 'rock.v.02', 'rock.n.07'),  # Tilt, sway.
+    }),
 ]
