@@ -140,4 +140,9 @@ ideals = [
         group('framework.n.03', 'frame.v.06'),  # Construct something.
         group('inning.n.01', 'frame.n.12'),  # Sports.
     }),
+    Ideal('accidental', {
+        group('accidental.s.01'),
+        group('accidental.n.01'),  # Music.
+        group('incidental.s.02'),  # Not of prime importance.
+    }),
 ]
