@@ -105,4 +105,11 @@ ideals = [
         group('close_call.n.01'),
         group('squeak.n.01', 'whine.v.03'),
     }),
+    Ideal('flame', {
+        group('flame.v.03'),  # Internet.
+        group('fire.n.03', 'flame.v.02', 'flare.v.03'),
+    }),
+    Ideal('hate', {  # This is a good exemplary for testing words that should have one meaning group.
+        group('hate.n.01', 'hate.v.01'),
+    }),
 ]
