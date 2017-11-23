@@ -112,4 +112,12 @@ ideals = [
     Ideal('hate', {  # This is a good exemplary for testing words that should have one meaning group.
         group('hate.n.01', 'hate.v.01'),
     }),
+    Ideal('holiday', {
+        group('holiday.n.02'),  # Day where work is suspended.
+        group('vacation.n.01', 'vacation.v.01'),
+    }),
+    Ideal('rice', {
+        group('rice.n.01', 'rice.n.02'),
+        group('rice.v.01'),
+    }),
 ]
