@@ -120,4 +120,12 @@ ideals = [
         group('rice.n.01', 'rice.n.02'),
         group('rice.v.01'),
     }),
+    Ideal('fragile', {
+        group('delicate.s.03', 'fragile.s.02'),
+        group('flimsy.s.03'),  # Lacking substance.
+    }),
+    Ideal('outgoing', {  # Classifying this will be difficult, because outgoing.a.02 only has an antonym link.
+        group('outgoing.a.01', 'outgoing.a.02'),
+        group('extroverted.s.02'),
+    }),
 ]
