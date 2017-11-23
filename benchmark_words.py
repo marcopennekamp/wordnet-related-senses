@@ -128,4 +128,16 @@ ideals = [
         group('outgoing.a.01', 'outgoing.a.02'),
         group('extroverted.s.02'),
     }),
+    Ideal('frame', {
+        group('frame.n.01'),  # Eyeglasses.
+        group('frame.n.02', 'frame.n.05'),  # Pictures.
+        group('human_body.n.01', 'skeletal_system.n.01', 'skeleton.n.04'),  # Medicine.
+        group('frame_of_reference.n.02'),
+        group('ensnare.v.01'),  # Scheme, trap.
+        group('frame.n.11', 'frame.n.06', 'frame.v.01', 'frame.v.02'),  # Framing something like a picture.
+        group('frame.v.04'),  # Say something in a certain way.
+        group('frame.v.05'),  # Make basic plans.
+        group('framework.n.03', 'frame.v.06'),  # Construct something.
+        group('inning.n.01', 'frame.n.12'),  # Sports.
+    }),
 ]
