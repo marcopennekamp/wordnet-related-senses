@@ -94,4 +94,15 @@ ideals = [
     Ideal('tow', {
         group('tow.n.01', 'tow.v.01'),
     }),
+    Ideal('wave', {
+        group('beckon.v.01', 'brandish.v.01', 'wave.n.05'),  # Wave around (with hands).
+        group('wave.n.08'),  # Widespread unusual weather condition.
+        group('wave.n.06', 'curl.v.04', 'wave.v.05'),  # Hair.
+        group('wave.n.04', 'wave.n.02'),  # Something that rises rapidly, sudden increase/occurrence.
+        group('wave.n.01', 'wave.n.07', 'wave.n.03', 'roll.v.11'),  # Physics-like waves (including water).
+    }),
+    Ideal('squeak', {
+        group('close_call.n.01'),
+        group('squeak.n.01', 'whine.v.03'),
+    }),
 ]
