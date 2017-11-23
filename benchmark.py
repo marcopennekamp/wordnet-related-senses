@@ -55,6 +55,7 @@ def print_benchmark_ideal_results(ideal, clusters, accuracy, verbose):
         utils.print_clusters(clusters)
 
     print(f'Clustering accuracy for \'{word}\': {accuracy}')
+    print()
 
 
 def benchmark_ideal(wordnet_graph, ideal, verbose):
