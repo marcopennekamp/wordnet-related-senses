@@ -59,7 +59,7 @@ def compute_naive_similarity_matrix(word, synsets):
 
 
 def load_wordnet_graph(graph_name):
-    return metonym.WordNetGraph(f'{graph_name}.adj')
+    return metonym.WordNetGraph(f'{graph_name}.gml')
 
 
 def compute_lch_similarity_matrix(wordnet_graph, word, synsets):
