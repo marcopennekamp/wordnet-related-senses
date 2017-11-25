@@ -103,6 +103,3 @@ ENV/
 # IntelliJ Idea
 .idea
 wordnet-related-senses.iml
-
-# Generated WordNet graphs.
-*.adj
