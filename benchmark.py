@@ -1,5 +1,6 @@
 import numpy as np
 from munkres import Munkres
+from sys import argv
 
 import benchmark_words
 import corpus
@@ -75,9 +76,10 @@ def benchmark_ideal(wordnet_graph, ideal, verbose):
 
 
 def benchmark():
+    _, graph_name = argv
     verbose = True
     absolute_accuracy = 0
-    wordnet_graph = relatedness.load_wordnet_graph()
+    wordnet_graph = relatedness.load_wordnet_graph(graph_name)
     for word_result in benchmark_words.ideals:
         absolute_accuracy += benchmark_ideal(wordnet_graph, word_result, verbose)
     total_accuracy = absolute_accuracy / len(benchmark_words.ideals)

@@ -8,9 +8,9 @@ import utils
 
 
 def main():
-    _, word = argv
+    _, graph_name, word = argv
     synsets = np.asarray(corpus.synsets(word))
-    wordnet_graph = relatedness.load_wordnet_graph()
+    wordnet_graph = relatedness.load_wordnet_graph(graph_name)
 
     if len(synsets) > 1:
         similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, word, synsets)
