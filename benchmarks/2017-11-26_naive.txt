@@ -1,0 +1,250 @@
+Expected clusters for 'cannon':
+ - 'cannon.n.03'
+ - 'cannon.n.05'
+ - 'cannon.v.02', 'cannon.n.01', 'cannon.n.02', 'cannon.n.04'
+ - 'cannon.v.01', 'carom.n.02'
+Clusters for 'cannon':
+ - 'cannon.v.02', 'cannon.n.01', 'cannon.n.02', 'cannon.n.04'
+ - 'cannon.n.05', 'cannon.n.03'
+ - 'cannon.v.01', 'carom.n.02'
+Clustering accuracy for 'cannon': 0.875
+
+Expected clusters for 'model':
+ - 'model.n.02'
+ - 'model.n.01', 'model.n.04', 'model.v.05', 'model.v.06', 'model.n.07', 'model.v.01', 'model.n.09'
+ - 'model.v.04', 'mannequin.n.01', 'model.n.03', 'model.v.03', 'model.v.02'
+ - 'model.n.06', 'exemplary.s.01', 'exemplar.n.01'
+Clusters for 'model':
+ - 'model.n.06'
+ - 'model.n.02'
+ - 'model.v.04', 'mannequin.n.01', 'model.n.03', 'model.v.03', 'model.v.02'
+ - 'exemplary.s.01', 'exemplar.n.01'
+ - 'model.n.01', 'model.n.04', 'model.v.05', 'model.v.06', 'model.n.07', 'model.v.01', 'model.n.09'
+Clustering accuracy for 'model': 0.9375
+
+Expected clusters for 'dog':
+ - 'dog.n.03', 'frump.n.01', 'cad.n.01'
+ - 'frank.n.02'
+ - 'dog.n.01', 'chase.v.01'
+ - 'andiron.n.01', 'pawl.n.01'
+Clusters for 'dog':
+ - 'dog.n.03', 'frump.n.01', 'cad.n.01'
+ - 'frank.n.02'
+ - 'dog.n.01', 'chase.v.01'
+ - 'pawl.n.01', 'andiron.n.01'
+Clustering accuracy for 'dog': 1.0
+
+Expected clusters for 'arrange':
+ - 'arrange.v.02', 'stage.v.02'
+ - 'dress.v.16'
+ - 'format.v.01'
+ - 'arrange.v.07', 'arrange.v.01'
+ - 'arrange.v.06'
+Clusters for 'arrange':
+ - 'arrange.v.02', 'dress.v.16', 'arrange.v.07', 'arrange.v.01'
+ - 'arrange.v.06', 'stage.v.02'
+ - 'format.v.01'
+Clustering accuracy for 'arrange': 0.5714285714285714
+
+Expected clusters for 'week':
+ - 'week.n.03', 'week.n.01'
+ - 'workweek.n.01'
+Clusters for 'week':
+ - 'week.n.03', 'week.n.01'
+ - 'workweek.n.01'
+Clustering accuracy for 'week': 1.0
+
+Expected clusters for 'scarf':
+ - 'scarf.v.03', 'scarf.n.01'
+ - 'scarf.v.01'
+ - 'scarf_joint.n.01', 'scarf.v.02'
+Clusters for 'scarf':
+ - 'scarf.v.03', 'scarf.n.01'
+ - 'scarf.v.02', 'scarf.v.01', 'scarf_joint.n.01'
+Clustering accuracy for 'scarf': 0.8
+
+Expected clusters for 'pale':
+ - 'pale.s.02', 'pale.s.05', 'pale.s.01', 'pale.s.03'
+ - 'picket.n.05'
+ - 'pale.v.01', 'pale.s.04'
+Clusters for 'pale':
+ - 'pale.s.01', 'pale.s.05', 'pale.s.03', 'pale.s.02'
+ - 'picket.n.05'
+ - 'pale.v.01', 'pale.s.04'
+Clustering accuracy for 'pale': 1.0
+
+Expected clusters for 'sigh':
+ - 'sigh.v.01', 'sigh.v.02', 'sigh.n.02', 'sigh.n.01'
+Clusters for 'sigh':
+ - 'sigh.v.02', 'sigh.n.01'
+ - 'sigh.v.01', 'sigh.n.02'
+Clustering accuracy for 'sigh': 0.5
+
+Expected clusters for 'gift':
+ - 'gift.n.01', 'giving.n.01', 'give.v.08'
+ - 'endow.v.01', 'endowment.n.01'
+Clusters for 'gift':
+ - 'gift.n.01', 'giving.n.01', 'give.v.08'
+ - 'endow.v.01', 'endowment.n.01'
+Clustering accuracy for 'gift': 1.0
+
+Expected clusters for 'plane':
+ - 'airplane.n.01'
+ - 'plane.n.03'
+ - 'plane.n.02', 'flat.s.01'
+ - 'plane.v.02'
+ - 'plane.v.03', 'plane.n.05', 'plane.v.01', 'plane.n.04'
+Clusters for 'plane':
+ - 'plane.n.02', 'flat.s.01', 'plane.n.03'
+ - 'airplane.n.01', 'plane.v.02'
+ - 'plane.v.03', 'plane.n.05', 'plane.v.01', 'plane.n.04'
+Clustering accuracy for 'plane': 0.7777777777777778
+
+Expected clusters for 'soak':
+ - 'soak.v.09'
+ - 'soak.v.05'
+ - 'pawn.v.01'
+ - 'intoxicate.v.02', 'souse.v.03'
+ - 'overcharge.v.01'
+ - 'soak.v.01', 'drench.v.04', 'soak.n.01', 'soak.v.08', 'soak.n.02'
+Clusters for 'soak':
+ - 'soak.v.01', 'soak.v.08', 'soak.n.01', 'soak.n.02'
+ - 'soak.v.05'
+ - 'overcharge.v.01'
+ - 'intoxicate.v.02', 'souse.v.03', 'pawn.v.01', 'drench.v.04', 'soak.v.09'
+Clustering accuracy for 'soak': 0.7272727272727273
+
+Expected clusters for 'superficial':
+ - 'superficial.a.01', 'superficial.s.03', 'casual.s.05'
+ - 'superficial.s.04', 'superficial.a.02'
+Clusters for 'superficial':
+ - 'superficial.a.01', 'casual.s.05'
+ - 'superficial.s.03', 'superficial.s.04', 'superficial.a.02'
+Clustering accuracy for 'superficial': 0.8
+
+Expected clusters for 'store':
+ - 'store.n.02', 'store.v.01'
+ - 'memory.n.04'
+ - 'storehouse.n.01', 'store.v.02'
+ - 'shop.n.01'
+Clusters for 'store':
+ - 'store.n.02', 'store.v.01'
+ - 'memory.n.04'
+ - 'storehouse.n.01', 'store.v.02'
+ - 'shop.n.01'
+Clustering accuracy for 'store': 1.0
+
+Expected clusters for 'rock':
+ - 'rock.v.01', 'rock.n.07', 'rock.v.02'
+ - 'rock.n.04'
+ - 'rock_candy.n.01'
+ - 'rock.n.02', 'rock.n.01'
+ - 'rock_'n'_roll.n.01'
+Clusters for 'rock':
+ - 'rock.v.01', 'rock.n.02', 'rock.n.01', 'rock.n.07', 'rock.v.02', 'rock.n.04', 'rock_'n'_roll.n.01'
+ - 'rock_candy.n.01'
+Clustering accuracy for 'rock': 0.5
+
+Expected clusters for 'tow':
+ - 'tow.n.01', 'tow.v.01'
+Clusters for 'tow':
+ - 'tow.v.01'
+ - 'tow.n.01'
+Clustering accuracy for 'tow': 0.5
+
+Expected clusters for 'wave':
+ - 'wave.n.06', 'curl.v.04', 'wave.v.05'
+ - 'beckon.v.01', 'brandish.v.01', 'wave.n.05'
+ - 'wave.n.07', 'wave.n.03', 'wave.n.01', 'roll.v.11'
+ - 'wave.n.04', 'wave.n.02'
+ - 'wave.n.08'
+Clusters for 'wave':
+ - 'wave.n.07', 'wave.n.02', 'roll.v.11', 'wave.n.01', 'wave.n.03'
+ - 'wave.n.06', 'curl.v.04', 'wave.v.05'
+ - 'beckon.v.01', 'brandish.v.01', 'wave.n.05'
+ - 'wave.n.08'
+ - 'wave.n.04'
+Clustering accuracy for 'wave': 0.9230769230769231
+
+Expected clusters for 'squeak':
+ - 'close_call.n.01'
+ - 'whine.v.03', 'squeak.n.01'
+Clusters for 'squeak':
+ - 'close_call.n.01'
+ - 'whine.v.03', 'squeak.n.01'
+Clustering accuracy for 'squeak': 1.0
+
+Expected clusters for 'flame':
+ - 'fire.n.03', 'flare.v.03', 'flame.v.02'
+ - 'flame.v.03'
+Clusters for 'flame':
+ - 'fire.n.03', 'flare.v.03', 'flame.v.02'
+ - 'flame.v.03'
+Clustering accuracy for 'flame': 1.0
+
+Expected clusters for 'hate':
+ - 'hate.v.01', 'hate.n.01'
+Clusters for 'hate':
+ - 'hate.n.01'
+ - 'hate.v.01'
+Clustering accuracy for 'hate': 0.5
+
+Expected clusters for 'holiday':
+ - 'holiday.n.02'
+ - 'vacation.v.01', 'vacation.n.01'
+Clusters for 'holiday':
+ - 'holiday.n.02'
+ - 'vacation.v.01', 'vacation.n.01'
+Clustering accuracy for 'holiday': 1.0
+
+Expected clusters for 'rice':
+ - 'rice.n.01', 'rice.n.02'
+ - 'rice.v.01'
+Clusters for 'rice':
+ - 'rice.n.02'
+ - 'rice.v.01', 'rice.n.01'
+Clustering accuracy for 'rice': 0.6666666666666666
+
+Expected clusters for 'fragile':
+ - 'flimsy.s.03'
+ - 'delicate.s.03', 'fragile.s.02'
+Clusters for 'fragile':
+ - 'flimsy.s.03'
+ - 'delicate.s.03', 'fragile.s.02'
+Clustering accuracy for 'fragile': 1.0
+
+Expected clusters for 'outgoing':
+ - 'outgoing.a.02', 'outgoing.a.01'
+ - 'extroverted.s.02'
+Clusters for 'outgoing':
+ - 'outgoing.a.01', 'extroverted.s.02'
+ - 'outgoing.a.02'
+Clustering accuracy for 'outgoing': 0.6666666666666666
+
+Expected clusters for 'frame':
+ - 'frame.v.04'
+ - 'frame.v.05'
+ - 'frame.v.06', 'framework.n.03'
+ - 'frame.n.01'
+ - 'frame_of_reference.n.02'
+ - 'ensnare.v.01'
+ - 'frame.v.02', 'frame.v.01', 'frame.n.06', 'frame.n.11'
+ - 'skeleton.n.04', 'skeletal_system.n.01', 'human_body.n.01'
+ - 'frame.n.05', 'frame.n.02'
+ - 'frame.n.12', 'inning.n.01'
+Clusters for 'frame':
+ - 'ensnare.v.01', 'skeletal_system.n.01', 'human_body.n.01'
+ - 'framework.n.03', 'frame.v.02', 'inning.n.01', 'frame.v.04', 'frame.v.06', 'skeleton.n.04', 'frame.v.05', 'frame.n.01', 'frame.v.01', 'frame.n.11'
+ - 'frame.n.02', 'frame.n.12', 'frame.n.05', 'frame_of_reference.n.02', 'frame.n.06'
+Clustering accuracy for 'frame': 0.2777777777777778
+
+Expected clusters for 'accidental':
+ - 'incidental.s.02'
+ - 'accidental.n.01'
+ - 'accidental.s.01'
+Clusters for 'accidental':
+ - 'incidental.s.02'
+ - 'accidental.n.01', 'accidental.s.01'
+Clustering accuracy for 'accidental': 0.6666666666666666
+
+The total clustering accuracy is: 0.7875933510933513
