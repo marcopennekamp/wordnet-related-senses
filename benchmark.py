@@ -1,3 +1,4 @@
+import time
 import numpy as np
 from munkres import Munkres
 from sys import argv
@@ -86,4 +87,6 @@ def benchmark():
     print(f'The total clustering accuracy is: {total_accuracy}')
 
 
+start_time = time.time()
 benchmark()
+print(f"--- {time.time() - start_time} seconds ---")
