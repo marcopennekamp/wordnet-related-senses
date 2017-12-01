@@ -16,10 +16,8 @@ def calculate_clustering_accuracy(ideal, clusters):
     is calculated by assigning each ideal cluster to its best-fit real cluster (given the real cluster
     isn't assigned to another ideal cluster) and then counting the misplaced senses.
 
-    :return: A score from 1.0 (perfect match) to 0.0 (nothing fits). However, 0.0 is theoretically not possible,
-             because we don't label the clusters, and thus at least one ideal cluster will be assigned to some
-             real cluster containing at least one correct sense. A perfect match is only possible if the number
-             of ideal and real clusters is identical.
+    :return: A tuple (correct, total), where correct is the number of correctly placed senses and total
+             is the total number of senses.
     """
 
     # Convert to lists so we can index them.
@@ -43,7 +41,7 @@ def calculate_clustering_accuracy(ideal, clusters):
         ideal_cluster = ideal_list[ideal_index]
         cluster = cluster_list[cluster_index]
         correct_synset_count += len(ideal_cluster & cluster)
-    return correct_synset_count / all_synset_count
+    return correct_synset_count, all_synset_count
 
 
 def print_benchmark_ideal_results(ideal, clusters, accuracy, verbose):
@@ -79,11 +77,15 @@ def benchmark_ideal(wordnet_graph, ideal, verbose):
 def benchmark():
     _, graph_name = argv
     verbose = True
-    absolute_accuracy = 0
+    correct = 0
+    total = 0
     wordnet_graph = relatedness.load_wordnet_graph(graph_name)
     for word_result in benchmark_words.ideals:
-        absolute_accuracy += benchmark_ideal(wordnet_graph, word_result, verbose)
-    total_accuracy = absolute_accuracy / len(benchmark_words.ideals)
+        accuracy = benchmark_ideal(wordnet_graph, word_result, verbose)
+        correct += accuracy[0]
+        total += accuracy[1]
+    total_accuracy = correct / total
+    print(f'Correctly clustered {correct} out of {total} senses.')
     print(f'The total clustering accuracy is: {total_accuracy}')
 
 
