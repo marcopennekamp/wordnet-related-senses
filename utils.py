@@ -8,6 +8,7 @@ def print_clusters(clusters):
     for cluster in clusters:
         print(f' - {cluster_to_string(cluster)}')
 
+
 def print_clusters_with_indices(clusters):
     for index, cluster in enumerate(clusters):
         print(f'{index} - {cluster_to_string(cluster)}')

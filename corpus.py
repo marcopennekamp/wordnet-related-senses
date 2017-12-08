@@ -1,3 +1,4 @@
+import metonym
 from nltk.corpus import wordnet as wn
 
 
@@ -10,3 +11,7 @@ def synsets(word):
 
     # Just filter all synsets that don't include the word as is.
     return list(filter(lambda synset: word in synset.lemma_names(), wn.synsets(word)))
+
+
+def nodes(word):
+    return [metonym.Node.from_synset_and_lemma_name(synset, word) for synset in synsets(word)]

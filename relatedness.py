@@ -62,5 +62,5 @@ def load_wordnet_graph(graph_name):
     return metonym.WordNetGraph(f'{graph_name}.gml')
 
 
-def compute_lch_similarity_matrix(wordnet_graph, word, synsets):
-    return np.array([[wordnet_graph.lch_similarity(s1, s2) for s1 in synsets] for s2 in synsets])
+def compute_lch_similarity_matrix(wordnet_graph, nodes):
+    return np.array([[wordnet_graph.lch_similarity(n1, n2) for n1 in nodes] for n2 in nodes])
