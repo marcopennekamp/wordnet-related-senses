@@ -63,10 +63,10 @@ def benchmark_ideal(wordnet_graph, ideal, verbose):
     :return: The accuracy of the clustering for the given word.
     """
     word = ideal.word
-    synsets = np.asarray(corpus.synsets(word))
+    nodes = np.asarray(corpus.nodes(word))
 
-    similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, word, synsets)
-    clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
+    similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, nodes)
+    clusters = clustering.cluster_affinity(word, nodes, similarity_matrix)
     accuracy = calculate_clustering_accuracy(ideal, clusters)
 
     print_benchmark_ideal_results(ideal, clusters, accuracy, verbose)
@@ -80,8 +80,8 @@ def benchmark():
     correct = 0
     total = 0
     wordnet_graph = relatedness.load_wordnet_graph(graph_name)
-    for word_result in benchmark_words.ideals:
-        accuracy = benchmark_ideal(wordnet_graph, word_result, verbose)
+    for ideal in benchmark_words.ideals:
+        accuracy = benchmark_ideal(wordnet_graph, ideal, verbose)
         correct += accuracy[0]
         total += accuracy[1]
     total_accuracy = correct / total
