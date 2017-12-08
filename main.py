@@ -9,15 +9,15 @@ import utils
 
 def main():
     _, graph_name, word = argv
-    synsets = np.asarray(corpus.synsets(word))
+    nodes = np.asarray(corpus.nodes(word))
     wordnet_graph = relatedness.load_wordnet_graph(graph_name)
 
-    if len(synsets) > 1:
-        similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, word, synsets)
-        clusters = clustering.cluster_affinity(word, synsets, similarity_matrix)
+    if len(nodes) > 1:
+        similarity_matrix = relatedness.compute_lch_similarity_matrix(wordnet_graph, nodes)
+        clusters = clustering.cluster_affinity(word, nodes, similarity_matrix)
         print(f'Clusters for \'{word}\':')
         utils.print_clusters(clusters)
-    elif len(synsets) == 1:
+    elif len(nodes) == 1:
         print(f'There is no need to cluster the senses of {word}, because it only has one.')
     else:
         print(f'The word {word} does not exist.')

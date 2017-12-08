@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Cluster with affinity propagation (doesn't require the number of clusters).
-def cluster_affinity(word, synsets, similarity_matrix):
+def cluster_affinity(word, nodes, similarity_matrix):
     """
     Cluster with affinity propagation (doesn't require the number of clusters).
 
@@ -13,6 +13,8 @@ def cluster_affinity(word, synsets, similarity_matrix):
     aff.fit(similarity_matrix)
     clusters = set()
     for cluster_id in np.unique(aff.labels_):
-        cluster = frozenset(np.unique(synsets[np.nonzero(aff.labels_ == cluster_id)]))
+        nodes_in_cluster = nodes[np.nonzero(aff.labels_ == cluster_id)]
+        synsets = map(lambda node: node.synset, nodes_in_cluster)
+        cluster = frozenset(synsets)
         clusters.add(cluster)
     return clusters
