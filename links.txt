@@ -1,0 +1,2 @@
+Verb similarity: http://david.wardpowers.info/Research/AI/papers/200601-GWC-VerbSimWN.pdf
+Instance Words: http://www.aclweb.org/anthology/E/E17/E17-2.pdf#page=111
