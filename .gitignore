@@ -103,3 +103,6 @@ ENV/
 # IntelliJ Idea
 .idea
 wordnet-related-senses.iml
+
+# Generated files
+*.gml
